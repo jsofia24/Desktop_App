@@ -1,0 +1,6 @@
+App.class
+controlador\ReportesController.class
+modelo\ProyectoBancoDao.class
+vista\ReportesView.class
+util\JDBCUtilities.class
+modelo\ProyectoBancoVo.class
