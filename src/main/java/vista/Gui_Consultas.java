@@ -4,15 +4,34 @@
  */
 package vista;
 
-import vista.ReportesView.controlador;
+import controlador.ReportesController;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelo.Consulta1Vo;
 import modelo.Consulta2Vo;
 import modelo.Consulta3Vo;
 
 
 public class Gui_Consultas extends javax.swing.JFrame {
+    
+
+    public static ReportesController controlador= new ReportesController();
+    private DefaultTableModel modelo;
+    private JLabel lblTitulo;
+    
+
 
      
     /**
@@ -20,8 +39,37 @@ public class Gui_Consultas extends javax.swing.JFrame {
      */
     public Gui_Consultas() {
         initComponents();
+        controlador = new ReportesController();
+        
+        
+        
+        
         //rellenarLideres();
     }
+    
+        public void tabla1() {
+        tabla1 = new JTable(modelo);
+        tabla1.setPreferredScrollableViewportSize(new Dimension(400, 190));
+        tabla1.setBackground(new Color(110, 153, 247));
+        add(tabla1);
+        JScrollPane pane = new JScrollPane(tabla1);
+        add(pane);   
+    }
+        
+        public void jLabel3(){
+        lblTitulo = new JLabel("Informe Reto 5");
+        lblTitulo.setPreferredSize(new Dimension(500, 60));
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
+        lblTitulo.setHorizontalAlignment(0);
+        add(lblTitulo);
+    }
+        public void jLabel1(){
+            
+    }
+        public void jLabel2(){
+            
+    }
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,18 +80,35 @@ public class Gui_Consultas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFont(new java.awt.Font("Copperplate Gothic Light", 0, 10)); // NOI18N
+        setForeground(new java.awt.Color(102, 0, 102));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Consulta 1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Consulta 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -54,51 +119,64 @@ public class Gui_Consultas extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Consulta 3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Consulta 1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tabla1);
+
         jLabel1.setText("MINISTERIO DE VIVIENDA");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(jLabel1)
-                        .addGap(18, 292, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(338, 338, 338)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(17, 17, 17))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
+                    .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addGap(15, 15, 15)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(346, 346, 346))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(0, 308, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 810, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,66 +184,79 @@ public class Gui_Consultas extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try{
-            List<Consulta1Vo> proyecto=controlador.listarLider();
-            String imprimir="Imprimiendo informacion";
-            for(Consulta1Vo proyec:proyecto){
-               imprimir+=proyec.getId();
-               imprimir+="\t";
-               imprimir+=proyec.getNombre();
-               imprimir+="\t";
-               imprimir+=proyec.getPrimer_apellido();
-               imprimir+="\t";
-               imprimir+=proyec.getCiudad_residencia();
-               imprimir+="\n";
+            List<Consulta1Vo> lideres=controlador.listarLider();
+            modelo = new DefaultTableModel();
+            modelo.addColumn("Id Lider");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Ciudad");
+
+            for(Consulta1Vo lider: lideres){
+                Object[] fila = new Object[4];
+                fila[0]= lider.getId();
+                fila[1]= lider.getNombre();
+                fila[2]= lider.getPrimer_apellido();
+                fila[3]= lider.getCiudad_residencia();   
+                modelo.addRow(fila);                 
             }
-            jTextField1.setText(imprimir);
-            
-        } catch (SQLException ex){
-            System.err.println("Error: "+ex);
+            tabla1.setModel(modelo);
+            modelo.fireTableDataChanged(); //Actualiza la tabla
         }
-        
-        
+        catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try{
-            List<Consulta2Vo> proyecto=controlador.listarProyecto();
-            String imp="Imprimiendo informacion";
-            for(Consulta2Vo p:proyecto){
-            imp+=p.getId_proyecto();
-            imp+="\t";
-            imp+=p.getConstructora();
-            imp+="\t";
-            imp+=p.getNumero_habitaciones();
-            imp+="\t";
-            imp+=p.getCiudad();
-            imp+="\n";
+            List<Consulta2Vo> proyectos =controlador.listarProyecto();
+            modelo = new DefaultTableModel();
+            modelo.addColumn("Id proyecto");
+            modelo.addColumn("Constructora");
+            modelo.addColumn("Habitaciones");
+            modelo.addColumn("Ciudad");
+            
+
+            for(Consulta2Vo proyecto: proyectos){
+                Object[] fila = new Object[4];
+                fila[0]= proyecto.getId_proyecto();
+                fila[1]= proyecto.getConstructora();
+                fila[2]= proyecto.getNumero_habitaciones();
+                fila[3]= proyecto.getCiudad();   
+                modelo.addRow(fila);                 
             }
-            jTextField1.setText(imp);
-            } catch (SQLException ex){
-            System.err.println("Error: "+ex);
-            } 
+            tabla1.setModel(modelo);
+            modelo.fireTableDataChanged();
+            
+        }
+        catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        } 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          try{
-            List<Consulta3Vo> proyecto=controlador.listarCompra();
-            String imp="Imprimiendo informacion";
-            for(Consulta3Vo p:proyecto){
-            imp+=p.getId_compra();
-            imp+="\t";
-            imp+=p.getConstructora();
-            imp+="\t";
-            imp+=p.getBanco_vinculado();
-            imp+="\n";
-            
-            }
-            jTextField1.setText(imp);
-            } catch (SQLException ex){
-            System.err.println("Error: "+ex);
-            }
+             List<Consulta3Vo> compras = controlador.listarCompra();
+             modelo=new DefaultTableModel();
+             modelo.addColumn("Id Compra");
+             modelo.addColumn("Constructora");
+             modelo.addColumn("Banco");
+             
+             for(Consulta3Vo compra:compras){
+                 Object[] fila=new Object[3];
+                 fila[0]=compra.getId_compra();
+                 fila[1]=compra.getConstructora();
+                 fila[2]=compra.getBanco_vinculado();
+                 modelo.addRow(fila);
+             }
+             tabla1.setModel(modelo);
+             modelo.fireTableDataChanged();
+        }
+         catch (Exception e){
+             System.out.println("Error: " + e.getMessage());
+         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -197,18 +288,24 @@ public class Gui_Consultas extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
                 new Gui_Consultas().setVisible(true);
             }
+        
         });
-    }
-
+}
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla1;
     // End of variables declaration//GEN-END:variables
-
+   
+}
  

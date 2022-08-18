@@ -1,4 +1,5 @@
 
+import java.awt.FlowLayout;
 import vista.ReportesView;
 
 /*
@@ -24,7 +25,6 @@ public class App {
        System.out.println("Consulta 3");
        ReportesView reporte3=new ReportesView();
        reporte3.Consulta3();
-       
        
     }
 }
