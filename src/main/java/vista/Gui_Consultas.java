@@ -29,7 +29,7 @@ public class Gui_Consultas extends javax.swing.JFrame {
 
     public static ReportesController controlador= new ReportesController();
     private DefaultTableModel modelo;
-    private JLabel lblTitulo;
+    
     
 
 
@@ -39,7 +39,7 @@ public class Gui_Consultas extends javax.swing.JFrame {
      */
     public Gui_Consultas() {
         initComponents();
-        controlador = new ReportesController();
+       
         
         
         
@@ -56,21 +56,6 @@ public class Gui_Consultas extends javax.swing.JFrame {
         add(pane);   
     }
         
-        public void jLabel3(){
-        lblTitulo = new JLabel("Informe Reto 5");
-        lblTitulo.setPreferredSize(new Dimension(500, 60));
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
-        lblTitulo.setHorizontalAlignment(0);
-        add(lblTitulo);
-    }
-        public void jLabel1(){
-            
-    }
-        public void jLabel2(){
-            
-    }
-        
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
